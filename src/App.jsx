@@ -167,137 +167,88 @@ function App() {
         </div>
       </section>
       
-      <footer style={{ backgroundColor: '#7ea474', color: '#FFFFFF', padding: '6rem 0 3rem', position: 'relative', overflow: 'hidden' }}>
+      <footer style={{ backgroundColor: '#7ea474', color: '#FFFFFF', padding: '5rem 0 3rem', position: 'relative' }}>
         <div style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '8px', backgroundColor: '#1D3B5A' }}></div>
 
         <div className="container">
-          <div style={{ textAlign: 'center', marginBottom: '5rem' }}>
-            <img src={Logo} alt="Infabio Logo" style={{ height: '64px', filter: 'brightness(0) invert(1) drop-shadow(2px 2px 0px rgba(0,0,0,0.5))' }} />
-          </div>
-          
-          <div style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'space-between', gap: '2rem', marginBottom: '5rem', textAlign: 'left' }}>
-            <div style={{ minWidth: '160px' }}>
-              <h4 style={{ color: '#FFFFFF', fontWeight: 800, marginBottom: '1.5rem', textTransform: 'uppercase', fontSize: '1rem' }}>Agency</h4>
-              <div style={{ display: 'flex', flexDirection: 'column', gap: '0.8rem' }}>
-                <a href="#" style={{ color: '#FFFFFF', textDecoration: 'none', fontSize: '0.95rem' }}>Services</a>
-                <a href="#" style={{ color: '#FFFFFF', textDecoration: 'none', fontSize: '0.95rem' }}>Results</a>
-                <a href="#" style={{ color: '#FFFFFF', textDecoration: 'none', fontSize: '0.95rem' }}>Blog</a>
-                <a href="#" style={{ color: '#FFFFFF', textDecoration: 'none', fontSize: '0.95rem', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
-                  Careers <span style={{ backgroundColor: '#C1E6C1', color: '#7ea474', fontSize: '0.7rem', padding: '0.1rem 0.4rem', borderRadius: '4px', fontWeight: 'bold' }}>HIRING</span>
-                </a>
-                <a href="#" style={{ color: '#FFFFFF', textDecoration: 'none', fontSize: '0.95rem' }}>Partner Program</a>
-                <a href="#" style={{ color: '#FFFFFF', textDecoration: 'none', fontSize: '0.95rem' }}>Contact Us</a>
+          <div style={{ display: 'grid', gridTemplateColumns: '1.5fr 1fr 1fr 1.5fr', gap: '4rem', marginBottom: '5rem', textAlign: 'left' }}>
+            {/* Column 1: Brand */}
+            <div>
+              <div style={{ marginBottom: '1.5rem' }}>
+                <img src={Logo} alt="Infabio Logo" style={{ height: '40px', filter: 'brightness(0) invert(1)' }} />
+              </div>
+              <p style={{ color: 'rgba(255,255,255,0.8)', fontSize: '1rem', lineHeight: '1.6', marginBottom: '2rem' }}>
+                AI-powered marketing defense system protecting brands from budget waste and maximizing ROI across three continents.
+              </p>
+              <div style={{ display: 'flex', gap: '1rem' }}>
+                 {['in', 'tw', 'ig'].map(network => (
+                    <a href="#" key={network} style={{ width: '40px', height: '40px', borderRadius: '4px', border: '2px solid #FFFFFF', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#FFFFFF', textDecoration: 'none', fontSize: '0.9rem', fontWeight: 'bold' }}>
+                      {network}
+                    </a>
+                  ))}
               </div>
             </div>
 
-            <div style={{ minWidth: '160px' }}>
-              <h4 style={{ color: '#FFFFFF', fontWeight: 800, marginBottom: '1.5rem', textTransform: 'uppercase', fontSize: '1rem' }}>Paid Advertising</h4>
-              <div style={{ display: 'flex', flexDirection: 'column', gap: '0.8rem' }}>
-                <a href="#" style={{ color: '#FFFFFF', textDecoration: 'none', fontSize: '0.95rem' }}>PPC Agency</a>
-                <a href="#" style={{ color: '#FFFFFF', textDecoration: 'none', fontSize: '0.95rem' }}>Facebook Ads Agency</a>
-                <a href="#" style={{ color: '#FFFFFF', textDecoration: 'none', fontSize: '0.95rem' }}>Google Ads Agency</a>
-                <a href="#" style={{ color: '#FFFFFF', textDecoration: 'none', fontSize: '0.95rem' }}>SEM Agency</a>
-                <a href="#" style={{ color: '#FFFFFF', textDecoration: 'none', fontSize: '0.95rem' }}>PPC Management</a>
-                <a href="#" style={{ color: '#FFFFFF', textDecoration: 'none', fontSize: '0.95rem' }}>LinkedIn Ads Agency</a>
-              </div>
+            {/* Column 2: Services */}
+            <div>
+              <h4 style={{ color: '#FFFFFF', fontWeight: 800, marginBottom: '1.5rem', textTransform: 'uppercase', fontSize: '0.9rem', letterSpacing: '1px' }}>Services</h4>
+              <nav style={{ display: 'flex', flexDirection: 'column', gap: '0.8rem' }}>
+                {['AI Media Buying', 'SEO & Search', 'Conversion Optimization', 'Social Media', 'Email Marketing', 'Brand Protection'].map(link => (
+                  <a href="#" key={link} style={{ color: 'rgba(255,255,255,0.8)', textDecoration: 'none', fontSize: '0.95rem' }}>{link}</a>
+                ))}
+              </nav>
             </div>
 
-            <div style={{ minWidth: '160px' }}>
-              <h4 style={{ color: '#FFFFFF', fontWeight: 800, marginBottom: '1.5rem', textTransform: 'uppercase', fontSize: '1rem' }}>SEO</h4>
-              <div style={{ display: 'flex', flexDirection: 'column', gap: '0.8rem' }}>
-                <a href="#" style={{ color: '#FFFFFF', textDecoration: 'none', fontSize: '0.95rem' }}>Content Marketing</a>
-                <a href="#" style={{ color: '#FFFFFF', textDecoration: 'none', fontSize: '0.95rem' }}>SEO Agency</a>
-                <a href="#" style={{ color: '#FFFFFF', textDecoration: 'none', fontSize: '0.95rem' }}>Link Building Services</a>
-              </div>
+            {/* Column 3: Company */}
+            <div>
+              <h4 style={{ color: '#FFFFFF', fontWeight: 800, marginBottom: '1.5rem', textTransform: 'uppercase', fontSize: '0.9rem', letterSpacing: '1px' }}>Company</h4>
+              <nav style={{ display: 'flex', flexDirection: 'column', gap: '0.8rem' }}>
+                {['About Us', 'Case Studies', 'Insights', 'Careers', 'Contact'].map(link => (
+                  <a href="#" key={link} style={{ color: 'rgba(255,255,255,0.8)', textDecoration: 'none', fontSize: '0.95rem' }}>{link}</a>
+                ))}
+              </nav>
             </div>
 
-            <div style={{ minWidth: '160px' }}>
-              <h4 style={{ color: '#FFFFFF', fontWeight: 800, marginBottom: '1.5rem', textTransform: 'uppercase', fontSize: '1rem' }}>Conversion</h4>
-              <div style={{ display: 'flex', flexDirection: 'column', gap: '0.8rem' }}>
-                <a href="#" style={{ color: '#FFFFFF', textDecoration: 'none', fontSize: '0.95rem' }}>Conversion Rate Optimization</a>
-                <a href="#" style={{ color: '#FFFFFF', textDecoration: 'none', fontSize: '0.95rem' }}>Landing Page Agency</a>
-                <a href="#" style={{ color: '#FFFFFF', textDecoration: 'none', fontSize: '0.95rem' }}>Landing Page Design</a>
-              </div>
-            </div>
-
-            <div style={{ minWidth: '160px' }}>
-              <h4 style={{ color: '#FFFFFF', fontWeight: 800, marginBottom: '1.5rem', textTransform: 'uppercase', fontSize: '1rem' }}>Email Marketing</h4>
-              <div style={{ display: 'flex', flexDirection: 'column', gap: '0.8rem' }}>
-                <a href="#" style={{ color: '#FFFFFF', textDecoration: 'none', fontSize: '0.95rem' }}>Email Marketing Agency</a>
-              </div>
-            </div>
-          </div>
-
-          <div style={{ display: 'flex', justifyContent: 'space-between', gap: '2rem', flexWrap: 'wrap', borderBottom: '2px solid rgba(255,255,255,0.2)', borderTop: '2px solid rgba(255,255,255,0.2)', padding: '4rem 0', marginBottom: '4rem' }}>
-            <div style={{ display: 'flex', gap: '1rem', alignItems: 'center', width: '30%', minWidth: '250px' }}>
-              <div style={{ width: '80px', height: '80px', borderRadius: '50%', backgroundColor: '#FCD5B5', border: '4px solid #1D3B5A', display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
-                <span style={{ fontSize: '1.5rem', fontWeight: 800, color: '#1D3B5A' }}>CA</span>
-              </div>
-              <div style={{ textAlign: 'left' }}>
-                <h5 style={{ color: '#FFFFFF', margin: 0, fontWeight: 800, fontSize: '1rem' }}>CALIFORNIA</h5>
-                <p style={{ margin: '0.5rem 0 0', color: '#FFFFFF', fontSize: '0.9rem', lineHeight: '1.4' }}>2787 Bristol Street,<br/>Costa Mesa, CA 92626<br/>United States<br/>(949) 220-1195</p>
-              </div>
-            </div>
-            <div style={{ display: 'flex', gap: '1rem', alignItems: 'center', width: '30%', minWidth: '250px' }}>
-              <div style={{ width: '80px', height: '80px', borderRadius: '50%', backgroundColor: '#C0DEF7', border: '4px solid #1D3B5A', display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
-                <span style={{ fontSize: '1.5rem', fontWeight: 800, color: '#1D3B5A' }}>NC</span>
-              </div>
-              <div style={{ textAlign: 'left' }}>
-                <h5 style={{ color: '#FFFFFF', margin: 0, fontWeight: 800, fontSize: '1rem' }}>NORTH CAROLINA</h5>
-                <p style={{ margin: '0.5rem 0 0', color: '#FFFFFF', fontSize: '0.9rem', lineHeight: '1.4' }}>150 Fayetteville Street,<br/>Raleigh, NC 27601<br/>United States<br/>(919) 642-4121</p>
-              </div>
-            </div>
-            <div style={{ display: 'flex', gap: '1rem', alignItems: 'center', width: '30%', minWidth: '250px' }}>
-              <div style={{ width: '80px', height: '80px', borderRadius: '50%', backgroundColor: '#A9E2D8', border: '4px solid #1D3B5A', display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
-                <span style={{ fontSize: '1.5rem', fontWeight: 800, color: '#1D3B5A' }}>UK</span>
-              </div>
-              <div style={{ textAlign: 'left' }}>
-                <h5 style={{ color: '#FFFFFF', margin: 0, fontWeight: 800, fontSize: '1rem' }}>UNITED KINGDOM</h5>
-                <p style={{ margin: '0.5rem 0 0', color: '#FFFFFF', fontSize: '0.9rem', lineHeight: '1.4' }}>33 Queen Street,<br/>London, EC4R 1AP<br/>United Kingdom<br/>+44 20 3695 7895</p>
+            {/* Column 4: Global Presence */}
+            <div>
+              <h4 style={{ color: '#FFFFFF', fontWeight: 800, marginBottom: '1.5rem', textTransform: 'uppercase', fontSize: '0.9rem', letterSpacing: '1px' }}>Global Presence</h4>
+              <div style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem' }}>
+                <div style={{ display: 'flex', gap: '0.75rem', alignItems: 'flex-start' }}>
+                  <div style={{ marginTop: '0.2rem' }}>📍</div>
+                  <div>
+                    <h5 style={{ color: '#FFFFFF', margin: 0, fontSize: '1rem' }}>Gurugram, India</h5>
+                    <p style={{ margin: 0, color: 'rgba(255,255,255,0.6)', fontSize: '0.85rem' }}>Defense Command Center</p>
+                  </div>
+                </div>
+                <div style={{ display: 'flex', gap: '0.75rem', alignItems: 'flex-start' }}>
+                  <div style={{ marginTop: '0.2rem', color: '#FFBD2E' }}>📍</div>
+                  <div>
+                    <h5 style={{ color: '#FFFFFF', margin: 0, fontSize: '1rem' }}>Jaipur, India</h5>
+                    <p style={{ margin: 0, color: 'rgba(255,255,255,0.6)', fontSize: '0.85rem' }}>Creative Division</p>
+                  </div>
+                </div>
+                <div style={{ display: 'flex', gap: '0.75rem', alignItems: 'flex-start' }}>
+                  <div style={{ marginTop: '0.2rem', color: '#C0DEF7' }}>📍</div>
+                  <div>
+                    <h5 style={{ color: '#FFFFFF', margin: 0, fontSize: '1rem' }}>New York, USA</h5>
+                    <p style={{ margin: 0, color: 'rgba(255,255,255,0.6)', fontSize: '0.85rem' }}>Global Expansion HQ</p>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
 
-          <div style={{ maxWidth: '850px', margin: '0 auto 5rem', backgroundColor: 'transparent', border: '4px solid #1D3B5A', borderRadius: '16px', padding: '2rem 3rem', display: 'flex', alignItems: 'center', justifyContent: 'space-between', flexWrap: 'wrap', gap: '2rem' }}>
-            <div style={{ display: 'flex', alignItems: 'center', gap: '1.5rem' }}>
-              <h2 style={{ fontSize: '5rem', color: '#B3E2A7', textShadow: '4px 4px 0 #1D3B5A', margin: 0, lineHeight: 1 }}>?</h2>
-              <div style={{ textAlign: 'left' }}>
-                 <h3 style={{ color: '#FFFFFF', margin: 0, fontSize: '1.5rem', fontWeight: 800 }}>Have a question?</h3>
-                 <p style={{ color: '#FFFFFF', margin: 0, fontSize: '1.25rem', marginTop: '0.2rem' }}>We don't bite.</p>
-              </div>
+          <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', paddingTop: '3rem', borderTop: '1px solid rgba(255,255,255,0.1)', flexWrap: 'wrap', gap: '2rem' }}>
+            <div style={{ display: 'flex', gap: '2rem', alignItems: 'center' }}>
+              <a href="mailto:contact@marketingdefense.com" style={{ color: 'rgba(255,255,255,0.8)', textDecoration: 'none', fontSize: '0.9rem', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+                ✉ contact@marketingdefense.com
+              </a>
+              <span style={{ color: 'rgba(255,255,255,0.4)', fontSize: '0.9rem' }}>© 2026 Marketing Defense. All rights reserved.</span>
             </div>
-            <a href="mailto:friends@infabio.com" className="btn" style={{ backgroundColor: '#EF7D7D', textTransform: 'uppercase', border: '4px solid #1D3B5A', boxShadow: '4px 4px 0px #1D3B5A', borderRadius: '8px' }}>friends@infabio.com</a>
-          </div>
-
-          <div style={{ textAlign: 'center', marginBottom: '5rem' }}>
-            <h4 style={{ color: '#FFFFFF', letterSpacing: '2px', textTransform: 'uppercase', marginBottom: '2rem', fontWeight: 800 }}>Currently Accepting Followers</h4>
-            <div style={{ display: 'flex', justifyContent: 'center', gap: '1.5rem', marginBottom: '5rem', flexWrap: 'wrap' }}>
-               {['in', 'ig', 'fb', 'yt', 'db'].map(network => (
-                 <a href="#" key={network} style={{ width: '60px', height: '60px', borderRadius: '50%', backgroundColor: '#EF7D7D', border: '4px solid #1D3B5A', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#FFF', fontWeight: 'bold', fontSize: '1.25rem', boxShadow: '4px 4px 0 #1D3B5A', textDecoration: 'none' }}>
-                   {network}
-                 </a>
-               ))}
-            </div>
-
-            <div style={{ display: 'flex', justifyContent: 'center', gap: '2rem', flexWrap: 'wrap' }}>
-               <div style={{ backgroundColor: '#F9F9FA', padding: '1rem 2rem', border: '4px solid #1D3B5A', borderRadius: '4px', filter: 'drop-shadow(4px 4px 0 #1D3B5A)' }}>
-                 <strong style={{ color: '#1D3B5A', fontSize: '1.25rem' }}>Google</strong><br/><span style={{ color: '#666', fontSize: '0.9rem' }}>Partner</span>
-               </div>
-               <div style={{ backgroundColor: '#1D3B5A', color: 'white', padding: '1rem 2rem', border: '4px solid #1D3B5A', borderRadius: '4px', filter: 'drop-shadow(4px 4px 0 #1D3B5A)' }}>
-                 <strong style={{ fontSize: '1.25rem' }}>Microsoft</strong><br/><span style={{ color: '#ccc', fontSize: '0.9rem' }}>Select Partner</span>
-               </div>
-               <div style={{ backgroundColor: '#F9F9FA', padding: '1rem 2rem', border: '4px solid #1D3B5A', borderRadius: '4px', filter: 'drop-shadow(4px 4px 0 #1D3B5A)' }}>
-                 <strong style={{ color: '#1D3B5A', fontSize: '1.25rem' }}>∞ Meta</strong><br/><span style={{ color: '#666', fontSize: '0.9rem' }}>Business Partner</span>
-               </div>
-            </div>
-          </div>
-
-          <div style={{ textAlign: 'center', opacity: 0.9 }}>
-            <p style={{ color: '#FFFFFF', marginBottom: '1rem', fontWeight: 700 }}>© Infabio 2026</p>
-            <div style={{ display: 'flex', justifyContent: 'center', gap: '1.5rem' }}>
-              <a href="#" style={{ color: '#FFFFFF', textDecoration: 'none' }}>Terms of Service</a>
-              <span style={{ color: '#FFFFFF' }}>|</span>
-              <a href="#" style={{ color: '#FFFFFF', textDecoration: 'none' }}>Privacy Policy</a>
+            <div style={{ display: 'flex', gap: '2rem' }}>
+              {['Privacy Policy', 'Terms of Service', 'Cookie Policy'].map(link => (
+                <a href="#" key={link} style={{ color: 'rgba(255,255,255,0.8)', textDecoration: 'none', fontSize: '0.9rem' }}>{link}</a>
+              ))}
             </div>
           </div>
         </div>
