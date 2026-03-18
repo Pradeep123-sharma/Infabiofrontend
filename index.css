@@ -26,14 +26,16 @@
         body {
             font-family: 'Inter', sans-serif;
             background-color: #e2e8f0;
-            display: flex;
-            justify-content: center;
+
             padding: 20px 0;
             color: var(--text-main);
         }
 
         .wireframe-container {
-            width: 1440px;
+            width: 100%;
+            max-width: 1440px;
+            margin: 0 auto;
+            overflow-x: hidden;
             background-color: var(--bg-color);
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
             position: relative;
