@@ -1,10 +1,10 @@
 import React from 'react';
 import './index.css';
 import Logo from "./assets/infabio-logo.png";
-import PaidAdImg from "C:/Users/ok/.gemini/antigravity/brain/eedac130-9f98-44cf-bc36-a7b991b48abd/paid_advertising_illustration_1773831863096.png";
-import SeoImg from "C:/Users/ok/.gemini/antigravity/brain/eedac130-9f98-44cf-bc36-a7b991b48abd/seo_illustration_1773831980280.png";
-import CroImg from "C:/Users/ok/.gemini/antigravity/brain/eedac130-9f98-44cf-bc36-a7b991b48abd/cro_illustration_1773832009147.png";
-import EmailImg from "C:/Users/ok/.gemini/antigravity/brain/eedac130-9f98-44cf-bc36-a7b991b48abd/email_marketing_illustration_1773832034697.png";
+import PaidAdImg from "./assets/paid_advertising.png";
+import SeoImg from "./assets/seo.png";
+import CroImg from "./assets/cro.png";
+import EmailImg from "./assets/email_marketing.png";
 
 function App() {
   return (
